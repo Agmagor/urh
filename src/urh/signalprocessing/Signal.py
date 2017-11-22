@@ -154,7 +154,7 @@ class Signal(QObject):
         return self.__modulation_type
 
     @modulation_type.setter
-    def modulation_type(self, value: str):
+    def modulation_type(self, value: int):
         """
         0 - "ASK", 1 - "FSK", 2 - "PSK", 3 - "APSK (QAM)"
 
@@ -370,6 +370,7 @@ class Signal(QObject):
         new_signal.noise_max_plot = self.noise_max_plot
         new_signal.__bit_len = self.bit_len
         new_signal.__qad_center = self.qad_center
+        new_signal.__modulation_type = self.modulation_type
         new_signal.changed = True
         return new_signal
 
